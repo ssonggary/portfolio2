@@ -20,8 +20,11 @@ const skills = [
     name: "Another",
     percent: null,
     icons: [
-      { src: "/public/img/icon_vue.png", alt: "vue 로고" },
-      { src: "/public/img/icon_react.png", alt: "react 로고" },
+      { src: import.meta.env.BASE_URL + "img/icon_vue.png", alt: "vue 로고" },
+      {
+        src: import.meta.env.BASE_URL + "img/icon_react.png",
+        alt: "react 로고",
+      },
     ],
   },
 ];

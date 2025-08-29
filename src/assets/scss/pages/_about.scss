@@ -94,4 +94,10 @@
       }
     }
   }
+  @include respond-to($screen-sm) {
+    .icon {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
 }
