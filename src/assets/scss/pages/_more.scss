@@ -1,0 +1,84 @@
+@use "../abstracts" as *;
+
+.project-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  &__item {
+    &:first-of-type {
+      .project-list__type,
+      .project-list__desc {
+        border-top: 1px solid $color-gray-10;
+      }
+    }
+    &:hover {
+      .project-list__type,
+      .project-list__desc {
+        background-color: $color-primary;
+      }
+    }
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    &.disabled {
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+  &__type {
+    width: 12rem;
+    padding: 1.5rem 0;
+    font-size: 1.6rem;
+    border-bottom: 1px solid $color-gray-10;
+    transition: all 0.2s;
+  }
+  &__desc {
+    width: calc(100% - 14rem);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem 0;
+    font-size: 1.6rem;
+    border-bottom: 1px solid $color-gray-10;
+    transition: all 0.2s;
+  }
+  &__title {
+    width: calc(60% - 2.5rem);
+  }
+  &__stack {
+    width: calc(40% - 2.5rem);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  &__year {
+    width: 5rem;
+    text-align: right;
+    margin-left: auto;
+  }
+  @include respond-to($screen-md) {
+    &__link {
+      gap: 0;
+      align-items: stretch;
+    }
+    &__type {
+      flex-shrink: 1;
+      display: flex;
+      align-items: center;
+      width: 9rem;
+      padding: 1rem 0;
+      font-size: 1.4rem;
+    }
+    &__desc {
+      width: 100%;
+      padding: 1rem 0;
+      font-size: 1.4rem;
+    }
+    &__stack {
+      gap: 0.5rem;
+    }
+  }
+}

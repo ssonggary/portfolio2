@@ -1,0 +1,51 @@
+@use "../abstracts" as *;
+
+.contact-info {
+  margin-top: 5rem;
+  &__text {
+    display: block;
+    font-size: 3rem;
+    &.sub {
+      font-size: 2rem;
+    }
+  }
+  &__title {
+    display: block;
+    margin: 5rem 0 4rem;
+    font-family: $font-bebas;
+    font-size: 10rem;
+  }
+  &__links {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+  &__email,
+  .contact-info__github {
+    font-size: 1.8rem;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+  }
+  @include respond-to($screen-md) {
+    &__text {
+      font-size: 2rem;
+      &.sub {
+        font-size: 1.5rem;
+      }
+    }
+    &__title {
+      margin: 2rem 0;
+      font-size: 5rem;
+    }
+    &__links {
+      margin-top: 1rem;
+      gap: 2rem;
+    }
+    &__email,
+    .contact-info__github {
+      font-size: 1.5rem;
+      text-underline-offset: 5px;
+    }
+  }
+}

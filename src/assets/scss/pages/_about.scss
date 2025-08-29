@@ -1,0 +1,97 @@
+@use "../abstracts" as *;
+
+.introduction {
+  // padding-top: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+
+  .profile {
+    object-fit: cover;
+    width: 30rem;
+  }
+  .text-wrap {
+    width: 45%;
+    line-height: 1.6;
+    font-size: 1.6rem;
+    word-break: keep-all;
+  }
+  .name {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+
+  @include respond-to($screen-md) {
+    // padding-top: 10rem;
+    flex-direction: column;
+    gap: 3rem;
+    .text-wrap {
+      width: 100%;
+      font-size: 1.4rem;
+      line-height: 1.4;
+    }
+    .name {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+.skills {
+  width: 100%;
+  opacity: 0;
+  padding: 10rem 0 30rem;
+  &__content {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+  }
+  &__item {
+    width: calc(100% / 4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem;
+    & ~ .skills__item {
+      border-left: 1px solid $color-gray-10;
+    }
+  }
+  &__title {
+    font-family: $font-bebas;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+  &__percent {
+    font-family: $font-bebas;
+    font-size: 6rem;
+    font-weight: 700;
+  }
+  &__another {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    .icon {
+      width: 5rem;
+      height: 5rem;
+      object-fit: cover;
+    }
+  }
+  @include respond-to($screen-md) {
+    padding: 15rem 0 15rem;
+    &__title {
+      font-size: 2rem;
+    }
+    &__percent {
+      font-size: 4rem;
+    }
+    &__another {
+      .icon {
+        width: 4rem;
+        height: 4rem;
+      }
+    }
+  }
+}
