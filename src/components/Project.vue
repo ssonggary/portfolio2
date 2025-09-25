@@ -3,31 +3,35 @@ import { ref, computed, onMounted, onBeforeUnmount } from "vue";
 import { useTrigger } from "@/composables/useTrigger";
 
 const projectSection = ref(null);
+const baseUrl = import.meta.env.BASE_URL;
 const items = [
   {
     label: "JB Bravo Korea",
     desc: "전북은행 외국인 전용 앱 고도화 프로젝트.\n 외국인 고객이 금융 서비스와 커뮤니티를 더 쉽고 편리하게 이용할 수 있도록 React 기반의 반응형 앱으로 최적화.",
-
     stack: ["App", "React"],
     href: "https://play.google.com/store/apps/details?id=kr.co.jbbank.bravokorea&pli=1",
+    imgSrc: baseUrl + "img/project_jb.png",
   },
   {
     label: "SK shieldus",
     desc: "차세대 ERP/BSS 통합 시스템 구축.\n Vue3, TailwindCSS, AG Grid로 대규모 데이터 처리와 직관적인 업무 화면을 구현.",
     stack: ["Web", "Vue3", "TailwindCSS", "AG Grid"],
     href: "https://www.skshieldus.com/kor/index.do",
+    imgSrc: baseUrl + "img/project_sk.png",
   },
   {
     label: "NH Members",
     desc: "NH 멤버스 채널 고도화 프로젝트.\n HTML, SCSS, JavaScript 기반의 반응형 환경으로 다양한 멤버십 서비스와 제휴 포인트 기능을 강화.",
     stack: ["App", "Web", "HTML", "SCSS", "JavaScript"],
     href: "https://www.nhmembers.co.kr/",
+    imgSrc: baseUrl + "img/project_nh.png",
   },
   {
     label: "Dongasocio HR",
     desc: "동아쏘시오 채용 홈페이지 구축.\n 화려한 인터랙션과 반응형 UI/UX로 지원자가 몰입할 수 있는 채용 경험을 제공.",
     stack: ["Web", "HTML", "SCSS", "JavaScript"],
     href: "https://talent.dongasocio.com/kr/main",
+    imgSrc: baseUrl + "img/project_da.png",
   },
 ];
 
@@ -112,6 +116,9 @@ useTrigger({
             class="project-grid__link"
             >바로가기</a
           >
+        </div>
+        <div class="project-grid__img">
+          <img :src="item.imgSrc" alt="" class="image" />
         </div>
       </div>
     </div>
