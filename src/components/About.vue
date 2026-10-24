@@ -86,18 +86,16 @@ onMounted(() => {
     </div>
     <article class="introduction" ref="introduction">
       <div class="img-wrap" ref="profileImg">
-        <img class="profile" src="/public/img/profile01.png" alt="" />
+        <img class="profile" src="/img/profile01.png" alt="" />
       </div>
       <div class="text-wrap" ref="profileText">
         <p>
-          안녕하세요. {{ careerYears }}년차 웹퍼블리셔
-          <strong class="name">송가혜</strong> 입니다.<br />
-          저는 소통과 협력을 중요시하며, 기획과 디자인 의도를 정확하게 구현하고
-          사용자 경험을 향상시키는 작업에 열정을 가지고 있습니다.<br />
-          HTML, CSS, JavaScript뿐만 아니라 React, Vue등 다양한 프레임워크를
-          활용하여 효율적인 퍼블리싱을 위해 끊임없이 학습하고 있습니다.<br />
-          변화하는 트렌드에 맞춰 새로운 기술을 시도하며, 팀과 함께 성장하는
-          퍼블리셔가 되기 위해 노력하고 있습니다.
+          안녕하세요. {{ careerYears }}년차 웹퍼블리셔 <strong class="name">송가혜</strong> 입니다.<br />
+          저는 소통과 협력을 중요시하며, 기획과 디자인 의도를 정확하게 구현하고 사용자 경험을 향상시키는 작업에 열정을
+          가지고 있습니다.<br />
+          HTML, CSS, JavaScript뿐만 아니라 React, Vue등 다양한 프레임워크를 활용하여 효율적인 퍼블리싱을 위해 끊임없이
+          학습하고 있습니다.<br />
+          변화하는 트렌드에 맞춰 새로운 기술을 시도하며, 팀과 함께 성장하는 퍼블리셔가 되기 위해 노력하고 있습니다.
         </p>
       </div>
     </article>
@@ -105,21 +103,9 @@ onMounted(() => {
       <ul class="skills__content">
         <li class="skills__item" v-for="(skill, i) in skills" :key="i">
           <span class="skills__title"> {{ skill.name }}</span>
-          <div
-            v-if="skill.percent"
-            class="skills__percent"
-            :data-percent="skill.percent"
-          >
-            0%
-          </div>
+          <div v-if="skill.percent" class="skills__percent" :data-percent="skill.percent">0%</div>
           <div v-else class="skills__another">
-            <img
-              v-for="(icon, i) in skill.icons"
-              :key="i"
-              class="icon"
-              :src="icon.src"
-              :alt="icon.alt"
-            />
+            <img v-for="(icon, i) in skill.icons" :key="i" class="icon" :src="icon.src" :alt="icon.alt" />
           </div>
         </li>
       </ul>

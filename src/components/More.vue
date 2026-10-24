@@ -5,6 +5,13 @@ import { useTrigger } from "@/composables/useTrigger";
 const moreSection = ref(null);
 const projects = [
   {
+    type: "Corporate",
+    label: "동아쏘시오 채용 홈페이지 구축",
+    stack: ["Web", "HTML", "SCSS", "JavaScript"],
+    year: "2024",
+    href: "https://talent.dongasocio.com/kr/main",
+  },
+  {
     type: "Healthcare",
     label: "밝은세상안과 서울/부산 홈페이지 리뉴얼",
     stack: ["Web", "GSAP", "다국어"],
@@ -88,13 +95,7 @@ useTrigger({
     </div>
     <ul class="project-list">
       <li v-for="(item, i) in projects" :key="i" class="project-list__item">
-        <a
-          v-if="item.href"
-          :href="item.href"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="project-list__link"
-        >
+        <a v-if="item.href" :href="item.href" target="_blank" rel="noopener noreferrer" class="project-list__link">
           <div class="project-list__type">{{ item.type }}</div>
           <dl class="project-list__desc">
             <dt class="project-list__title">{{ item.label }}</dt>

@@ -6,6 +6,13 @@ const projectSection = ref(null);
 const baseUrl = import.meta.env.BASE_URL;
 const items = [
   {
+    label: "ET lnad mall",
+    desc: "전자랜드 쇼핑몰 운영.\n 목적에 따른 프로모션 기획전 페이지와 참여형 이벤트 콘텐츠 구현 및 쇼핑몰 페이지의 UI/콘텐츠 유지보수 및 운영",
+    stack: ["Web", "App", "HTML", "CSS", "jQuery"],
+    href: "https://www.etlandmall.co.kr",
+    imgSrc: baseUrl + "img/project_etland.png",
+  },
+  {
     label: "JB Bravo Korea",
     desc: "전북은행 외국인 전용 앱 고도화 프로젝트.\n 외국인 고객이 금융 서비스와 커뮤니티를 더 쉽고 편리하게 이용할 수 있도록 React 기반의 반응형 앱으로 최적화.",
     stack: ["App", "React"],
@@ -26,13 +33,13 @@ const items = [
     href: "https://www.nhmembers.co.kr/",
     imgSrc: baseUrl + "img/project_nh.png",
   },
-  {
-    label: "Dongasocio HR",
-    desc: "동아쏘시오 채용 홈페이지 구축.\n 화려한 인터랙션과 반응형 UI/UX로 지원자가 몰입할 수 있는 채용 경험을 제공.",
-    stack: ["Web", "HTML", "SCSS", "JavaScript"],
-    href: "https://talent.dongasocio.com/kr/main",
-    imgSrc: baseUrl + "img/project_da.png",
-  },
+  // {
+  //   label: "Dongasocio HR",
+  //   desc: "동아쏘시오 채용 홈페이지 구축.\n 화려한 인터랙션과 반응형 UI/UX로 지원자가 몰입할 수 있는 채용 경험을 제공.",
+  //   stack: ["Web", "HTML", "SCSS", "JavaScript"],
+  //   href: "https://talent.dongasocio.com/kr/main",
+  //   imgSrc: baseUrl + "img/project_da.png",
+  // },
 ];
 
 // ✅ 반응형 뷰포트 폭
@@ -105,17 +112,9 @@ useTrigger({
         <div class="project-grid__content">
           <p class="project-grid__desc">{{ item.desc }}</p>
           <ul class="project-grid__stack">
-            <li v-for="(tech, i) in item.stack" :key="i" class="stack-item">
-              #{{ tech }}
-            </li>
+            <li v-for="(tech, i) in item.stack" :key="i" class="stack-item">#{{ tech }}</li>
           </ul>
-          <a
-            :href="item.href"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="project-grid__link"
-            >바로가기</a
-          >
+          <a :href="item.href" target="_blank" rel="noopener noreferrer" class="project-grid__link">바로가기</a>
         </div>
         <div class="project-grid__img">
           <img :src="item.imgSrc" alt="" class="image" />
