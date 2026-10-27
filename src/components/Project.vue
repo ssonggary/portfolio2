@@ -6,7 +6,7 @@ const projectSection = ref(null);
 const baseUrl = import.meta.env.BASE_URL;
 const items = [
   {
-    label: "ET lnad mall",
+    label: "ET land mall",
     desc: "전자랜드 쇼핑몰 운영.\n 목적에 따른 프로모션 기획전 페이지와 참여형 이벤트 콘텐츠 구현 및 쇼핑몰 페이지의 UI/콘텐츠 유지보수 및 운영",
     stack: ["Web", "App", "HTML", "CSS", "jQuery"],
     href: "https://www.etlandmall.co.kr",
